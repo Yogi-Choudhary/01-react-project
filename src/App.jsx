@@ -34,10 +34,10 @@ function App() {
         <section id='examples'>
           <h2>Example</h2>
           <menu>
-            <TabButton onSelect={() => hendleSelect('components')}>Components</TabButton>
-            <TabButton onSelect={() => hendleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => hendleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() => hendleSelect('state')}>State</TabButton>
+            <TabButton isSelected={selectedTopic === 'components'} onSelect={() => hendleSelect('components')}>Components</TabButton>
+            <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => hendleSelect('jsx')}>JSX</TabButton>
+            <TabButton isSelected={selectedTopic === 'props'} onSelect={() => hendleSelect('props')}>Props</TabButton>
+            <TabButton isSelected={selectedTopic === 'state'} onSelect={() => hendleSelect('state')}>State</TabButton>
           </menu>
           {!selectedTopic ? (
             <p>Please select a topic.</p> 
