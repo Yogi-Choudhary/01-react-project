@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
+import Section from "./Section";
 export default function Examples(){
   
   const [ selectedTopic, setSelectedTopic ] =  useState()
@@ -11,13 +12,12 @@ export default function Examples(){
   }
 
   return (
-    <section id='examples'>
-      <h2>Example</h2>
+    <Section title="Example" id='examples'>
       <menu>
-        <TabButton isSelected={selectedTopic === 'components'} onSelect={() => hendleSelect('components')}>Components</TabButton>
-        <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => hendleSelect('jsx')}>JSX</TabButton>
-        <TabButton isSelected={selectedTopic === 'props'} onSelect={() => hendleSelect('props')}>Props</TabButton>
-        <TabButton isSelected={selectedTopic === 'state'} onSelect={() => hendleSelect('state')}>State</TabButton>
+        <TabButton isSelected={selectedTopic === 'components'} onClick={() => hendleSelect('components')}>Components</TabButton>
+        <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => hendleSelect('jsx')}>JSX</TabButton>
+        <TabButton isSelected={selectedTopic === 'props'} onClick={() => hendleSelect('props')}>Props</TabButton>
+        <TabButton isSelected={selectedTopic === 'state'} onClick={() => hendleSelect('state')}>State</TabButton>
       </menu>
       {!selectedTopic ? (
         <p>Please select a topic.</p> 
@@ -32,6 +32,6 @@ export default function Examples(){
           </pre>
         </div>
       ) } 
-    </section>
+    </Section>
   );
 }
